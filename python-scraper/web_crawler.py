@@ -23,14 +23,30 @@ with request.urlopen('https://hospitality.usc.edu/residential-dining-menus/') as
     #     newFile.write(data.decode('utf-8'))
 
 soup = BeautifulSoup(data.decode('utf-8'),'html.parser')
-diningHall = soup.find_all("h3", class_="menu-venue-title")
-bar = diningHall.find
+
+# search for separate meals category
+meals = soup.find_all(class_="hsp-accordian-container")
+diningHalls = []
+bars = []
+for i_meal in range(len(meals)):
+    diningHalls.append(meals[i_meal].find_all(class_="col-sm-6 col-md-4"))
+    bars.append([])
+    for i_diningHall in range(len(diningHalls[i_meal])):
+        if diningHalls[i_meal][i_diningHall].find(class_="menu-item-list"):
+            bars[i_meal].append(diningHalls[i_meal][i_diningHall].find_all(class_="menu-item-list"))
+        else:
+            bars[i_meal].append([])
+
+# write the filtered html in filtered.txt
 with open("filtered.txt", "w") as newFile:
-    for item in diningHall:
-        newFile.write(str(item) + '\n')
+    for meal in meals:
+        newFile.write(str(meal) + '\n')
+        for diningHall in diningHalls[meals.index(meal)]:
+            newFile.write('\t' + str(diningHall) + '\n')
+            if (len(bars[meals.index(meal)][diningHalls[meals.index(meal)].index(diningHall)]) != 0):
+                for bar in bars[meals.index(meal)][diningHalls[meals.index(meal)].index(diningHall)]:
+                    newFile.write('\t\t' + str(bar) + '\n')
+            else:
+                newFile.write('\t\t' + 'Null' + '\n')
 
-
-menu = soup.find_all("ul", class_="menu-item-list")
-# with open("filtered.txt", "w") as newFile:
-#     for item in menu:
-#         newFile.write(str(item) + '\n')
+# write the filtered menu in filtered.txt
