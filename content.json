@@ -1,0 +1,935 @@
+﻿{
+    "2018-10-13": [
+        {
+            "dining_hall": "village",
+            "date": "2018-10-13",
+            "breakfast": [],
+            "brunch": [
+                {
+                    "name": "Scrambled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Bacon",
+                    "type": [
+                        "Pork"
+                    ]
+                },
+                {
+                    "name": "Gardein Vegan Sausage",
+                    "type": [
+                        "Soy",
+                        "Vegan",
+                        "Wheat / Gluten"
+                    ]
+                },
+                {
+                    "name": "Boiled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Country Potatoes",
+                    "type": [
+                        "Vegan"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "parkside",
+            "date": "2018-10-13",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "evk",
+            "date": "2018-10-13",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2018-10-14": [
+        {
+            "dining_hall": "village",
+            "date": "2018-10-14",
+            "breakfast": [],
+            "brunch": [
+                {
+                    "name": "Scrambled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Bacon",
+                    "type": [
+                        "Pork"
+                    ]
+                },
+                {
+                    "name": "Gardein Vegan Sausage",
+                    "type": [
+                        "Soy",
+                        "Vegan",
+                        "Wheat / Gluten"
+                    ]
+                },
+                {
+                    "name": "Boiled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Country Potatoes",
+                    "type": [
+                        "Vegan"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "parkside",
+            "date": "2018-10-14",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "evk",
+            "date": "2018-10-14",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2018-10-15": [
+        {
+            "dining_hall": "village",
+            "date": "2018-10-15",
+            "breakfast": [],
+            "brunch": [
+                {
+                    "name": "Scrambled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Bacon",
+                    "type": [
+                        "Pork"
+                    ]
+                },
+                {
+                    "name": "Gardein Vegan Sausage",
+                    "type": [
+                        "Soy",
+                        "Vegan",
+                        "Wheat / Gluten"
+                    ]
+                },
+                {
+                    "name": "Boiled Eggs",
+                    "type": [
+                        "Eggs",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Country Potatoes",
+                    "type": [
+                        "Vegan"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "parkside",
+            "date": "2018-10-15",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        },
+        {
+            "dining_hall": "evk",
+            "date": "2018-10-15",
+            "breakfast": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "brunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "lunch": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ],
+            "dinner": [
+                {
+                    "name": "Asian Dressing1",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing2",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                },
+                {
+                    "name": "Asian Dressing3",
+                    "type": [
+                        "Sesame",
+                        "Soy",
+                        "Vegetarian"
+                    ]
+                }
+            ]
+        }
+    ]
+}
