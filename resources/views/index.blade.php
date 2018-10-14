@@ -26,7 +26,7 @@
                   <div class="col-md-2"></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-2" style="text-align: right;font-size: 18px;">LEGEND:</div>
+                  <div class="col-md-2" style="text-align: right;font-size: 14px;">ALLERGEN LEGEND:</div>
                   <div class="col-md-10">
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-dairy'></i>Dairy</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-eggs'></i>Eggs</span>
@@ -172,7 +172,7 @@
                   <div class="col-md-2"></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-2" style="text-align: right;font-size: 18px;">LEGEND:</div>
+                  <div class="col-md-2" style="text-align: right;font-size: 14px;">ALLERGEN LEGEND:</div>
                   <div class="col-md-10">
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-dairy'></i>Dairy</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-eggs'></i>Eggs</span>
