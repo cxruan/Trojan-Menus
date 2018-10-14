@@ -58,6 +58,7 @@ class web_menu(object):
         #                 newFile.write('\t\t' + 'Null' + '\n')
 
         # search for separate dish tags
+        self.dishes = []
         for meal in meals_:
             self.dishes.append([])
             for diningHall in diningHalls_[meals_.index(meal)]:
@@ -67,6 +68,7 @@ class web_menu(object):
                         self.dishes[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].append(bar.find_all("li"))
         
         #search for separate type tags
+        self.tags = []
         for meal in meals_:
             self.tags.append([])
             for diningHall in diningHalls_[meals_.index(meal)]:
@@ -78,6 +80,7 @@ class web_menu(object):
                             self.tags[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)][bars_[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].index(bar)].append(dish.find_all("i"))
 
         # search for separate bar tags
+        self.bars = []
         for meal in meals_:
             self.bars.append([])
             for diningHall in diningHalls_[meals_.index(meal)]:
@@ -87,10 +90,12 @@ class web_menu(object):
                     self.bars[meals_.index(meal)].append("Null")
 
         # search for separate diningHall tags
+        self.diningHalls = []
         for meal in meals_:
             self.diningHalls.append(meal.find_all(class_="menu-venue-title"))
 
         # search for separate meal tags
+        self.meal = []
         self.meals = self.soup.find_all(class_="fw-accordion-title-inner")
 
     
