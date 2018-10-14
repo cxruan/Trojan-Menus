@@ -11,12 +11,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/mfpapers-styles.css') }}" rel="stylesheet">
-    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="https://cdn.staticfile.org/jquery/2.2.2/jquery.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.2/dist/jquery.min.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/storage-cxruan/app.js"></script>
 
 </head>
 
@@ -36,14 +35,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <ul class="nav navbar-nav navbar">
                         <!-- Authentication Links -->
-                            <li><a href="" class="navbar-font" style="line-height: 13px; border: 1px solid white; border-radius: 10px; margin: 3px 0px 0px 0px;">Home</a></li>
+                            <li><a href="/" class="navbar-font" style="line-height: 13px; border: 1px solid white; border-radius: 10px; margin: 3px 0px 0px 0px;">Home</a></li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                            <li><a href="" class="navbar-font fa fa-user-o fa-2x" style="line-height: 13px; border: 1px solid white; border-radius: 10px; margin: 3px 0px 0px 0px;"></a></li>
-                    </ul>
                 </div>
             </div>
             </div>
@@ -61,8 +55,8 @@
         </style>
 
         <div class="wrapper-content">
-            <h2 id="h2" style="text-align: center; ">— Find your favorite food! —</h3>
-            <h1 id="h1" style="text-align: center; font-weight: bold;">Trojan Menus</h1>
+            <h2 id="h2" style="text-align: center;color: white">— Find your favorite food! —</h3>
+            <h1 id="h1" style="text-align: center;color: white;font-weight: bold;">Trojan Menus</h1>
             <div class="arrow"><i class="fa fa-angle-double-down"></i></div>
         </div>
     </div>
@@ -107,5 +101,12 @@
     });
     </script>
     
+    <script>
+    
+        var dis = $(document).height()-$(window).height()+50;
+    
+        $("html, body").animate({ scrollTop: dis }, 1000);
+    </script>
+
 </body>
 </html>
