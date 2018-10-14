@@ -2,6 +2,7 @@ from urllib import request
 from bs4 import BeautifulSoup
 import re
 import json
+from datetime import datetime
 
 class web_menu(object):
     # class of web menus
@@ -141,8 +142,8 @@ class web_menu(object):
 
 
 
-
-menu0 = web_menu("2018-10-14")
+now = datetime.now()
+menu0 = web_menu(str(now.year) + "-" + str(now.month) + "-" + str(now.day))
 #menu0.print_rawhtml()
 menu0.raw_output_txt()
 menu0.filtered_output_txt()
