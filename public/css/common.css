@@ -119,6 +119,10 @@ body{
 	background-color: #484152;
 }
 
+select{
+	display: inline!important;
+}
+
 main {
   width:100%;
   padding: 0;
@@ -206,7 +210,6 @@ input:checked + label {
  }
 
 .accordion .link {
-	cursor: pointer;
 	display: block;
 	padding: 15px 15px 15px 42px;
 	color: #4D4D4D;
@@ -219,11 +222,15 @@ input:checked + label {
 	transition: all 0.4s ease;
 }
 
+.accordion .link i{
+	margin-right: 10px;
+}
+
 .accordion li:last-child .link {
 	border-bottom: 0;
 }
 
-.accordion li i {
+/*.accordion li i {
 	position: absolute;
 	top: 16px;
 	left: 12px;
@@ -232,7 +239,7 @@ input:checked + label {
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-}
+}*/
 
 .accordion li i.fa-chevron-down {
 	right: 12px;
@@ -244,15 +251,7 @@ input:checked + label {
 	color: #b63b4d;
 }
 
-.accordion li.open i {
-	color: #b63b4d;
-}
-.accordion li.open i.fa-chevron-down {
-	-webkit-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	-o-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
+
 
 .accordion li.default .submenu {display: block;}
 /**
@@ -307,4 +306,83 @@ input:checked + label {
 @media screen and (max-width: 768px) {
 	#subtitle{display: none;}
 	#title{font-size: 6.5vw;}
+}
+
+/* Allergen styles */
+.fa-allergen{
+	margin-left: 5px;
+}
+
+.allergen-container{
+	display: inline;
+	margin: 10px;
+	font-size: 14px;
+}
+
+.allergen-container i{
+	margin-right: 5px;
+}
+
+.allergen-dairy {
+	color: #8224e3;
+}
+
+
+.allergen-eggs {
+	color: #ffe751;
+}
+
+
+.allergen-fish {
+	color: #00a8ff;
+}
+
+
+.allergen-food-not-analyzed-for-allergens {
+	color: black;
+}
+
+
+.allergen-peanuts {
+	color: #966600;
+}
+
+
+.allergen-pork {
+	color: #ff0000;
+}
+
+
+.allergen-sesame {
+	color: #5b5b5b;
+}
+
+
+.allergen-shellfish {
+	color: #00f3df;
+}
+
+
+.allergen-soy {
+	color: #dec1ff;
+}
+
+
+.allergen-tree-nuts {
+	color: #f78000;
+}
+
+
+.allergen-vegan {
+	color: #79ff02;
+}
+
+
+.allergen-vegetarian {
+	color: #01944d;
+}
+
+
+.allergen-gluten {
+	color: #c42d7d;
 }

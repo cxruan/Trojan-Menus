@@ -13,8 +13,6 @@
 
 Route::get('/','MainController@index');
 
-//Route::get('/json-test','MainController@json_test');
+Route::post('/search_by_name','MainController@json_search_by_name')->name("search_by_name");
 
-Route::post('search','MainController@json_test')->name("search");
-
-Route::get('/test','MainController@test');
+Route::post('/search_by_tags','MainController@json_search_by_tags')->name("search_by_tags");
