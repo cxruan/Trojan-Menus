@@ -1,16 +1,20 @@
-/*MFPAPERS_global*/
-#main,#slidingbar,.fusion-footer-copyright-area,.fusion-footer-widget-area,.fusion-page-title-bar,.fusion-secondary-header,.header-v4 #small-nav,.header-v5 #small-nav,.sticky-header .sticky-shadow,.tfs-slider .slide-content-container{padding-left:2px!important;padding-right:2px!important;}
-
-.fusion-fullwidth,.fullwidth-box,.fusion-blend-mode ,.nonhundred-percent-fullwidth{padding-left:0px!important;padding-right:0px!important;}
-
-/*MFPAPERS upgrade_log button */
-#mfmodal{
-    color: #b63b4d!important;
-    font-weight: bold!important;
-    background-color: white!important;
-    background-image: -webkit-linear-gradient(bottom,white,white);
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    list-style-type: none !important;
 }
-/*MFPAPERS_main*/
+
+body{
+    background-color: black;
+}
+
+#search-results{
+	background-color: #484152;
+}
+
 main {
   width:100%;
   padding: 0;
@@ -68,17 +72,6 @@ input:checked + label {
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4 {
   display: block;
-}
-
-
-
-* {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-    list-style-type: none !important;
 }
 
 .accordion a {
@@ -173,7 +166,7 @@ input:checked + label {
  	background: #484152;
  }
 
- .submenu a {
+ .submenu span {
  	display: block;
  	text-decoration: none;
  	color: white;
@@ -184,7 +177,7 @@ input:checked + label {
  	transition: all 0.25s ease;
  }
 
- .submenu a:hover {
+ .submenu span:hover {
  	background: #b63b4d;
  	color: #FFF;
  }
@@ -212,7 +205,4 @@ input:checked + label {
 	#title{font-size: 6.5vw;}
 }
 
-body{
-    background-color: black;
-    color:white;
-}
+

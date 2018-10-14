@@ -61,8 +61,8 @@
         </style>
 
         <div class="wrapper-content">
-            <h2 id="h2" style="text-align: center; ">— Find your favorite food! —</h3>
-            <h1 id="h1" style="text-align: center; font-weight: bold;">Trojan Menus</h1>
+            <h2 id="h2" style="text-align: center;color: white">— Find your favorite food! —</h3>
+            <h1 id="h1" style="text-align: center;color: white;font-weight: bold;">Trojan Menus</h1>
             <div class="arrow"><i class="fa fa-angle-double-down"></i></div>
         </div>
     </div>

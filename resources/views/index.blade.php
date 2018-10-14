@@ -3,20 +3,6 @@
 @section('content')
 
     <div id="content">
-
-        <button id="mfmodal" type="button" class="btn btn-default" style="margin-bottom: 4px; width: 100%;" data-toggle="modal" data-target="#Modal1">
-            CLICK HERE FOR HOW-TO GUIDE
-        </button>
-        <!-- Modal1 -->
-            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" style="width:95%;max-width: 800px" role="document">
-                <div class="modal-content">
-                  <div class="modal-body" style="text-align: center;">
-                    <img src="https://mfpapers.oss-cn-hangzhou.aliyuncs.com/img/res_guide.png" alt="res_guide" style="max-width: 100%;">
-                  </div>
-                </div>
-              </div>
-            </div>
         
         <main>
         <input id="tab1" type="radio" name="tabs" checked>
@@ -26,14 +12,38 @@
         <label for="tab2">AP</label>
           
         <section id="content1">
-                <div class="row" style="padding: 15px">
-                  <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
+                <div class="row" style="padding:15px;">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <form action="{{ route('search') }}" method="post" class="navbar-form navbar-left" role="search" style="width: 100%">
+                      {{ csrf_field() }}
+                    <div class="form-group" style="width: 70%">
+                      <input name="search" type="text" class="form-control" placeholder="Search" style="width: 100%">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
+                    </form>
+                  </div>
+                  <div class="col-md-2"></div>
                 </div>
+                <?php
+                if (isset($data)) {
+                echo
+                "<ul id='accordion' class='accordion'>
+                <li class='default open'>
+                    <div class='link'><i class='fa fa-search'></i>Search results</div>
+                    <ul class='submenu'>";
+                          foreach ($data as $key => $value) {
+                            echo " <li><span>".$value->name."</span></li>";
+                          }
+
+                echo
+                        "<li><span>AP Physics C: Mechanics</span></li>
+                    </ul>
+                </li>
+            </ul>";
+                }
+            ?>
+
         </section>
    
     
