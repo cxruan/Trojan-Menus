@@ -52,7 +52,7 @@ class MainController extends Controller
         return view('index');
     }
 
-    public function json_test(Request $request)
+    public function json_search_by_name(Request $request)
     {   
         $target = strtolower($request->input('search'));
         $json_string = file_get_contents('../content.json');
@@ -62,41 +62,62 @@ class MainController extends Controller
         $day2 = date('Y-m-d',strtotime('+1 day'));
         $day3 = date('Y-m-d',strtotime('+2 day'));
         $daylist = array($day1,$day2,$day3);
-
+        // $arrr = array();
         // Search the entire json for the target food within three days
         for ($i=0; $i < 3; $i++) { 
-            foreach ($data[$daylist[$i]][0]['breakfast'] as $key => $value) {
+            for ($j=0; $j < 3; $j++) { 
+            foreach ($data[$daylist[$i]][$j]['Breakfast'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
-                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][0]["date"],$data[$daylist[$i]][0]["dining_hall"],"breakfast");
+                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Breakfast");
                     array_push($arr,$obj);
                 }
             }
-            foreach ($data[$daylist[$i]][0]['brunch'] as $key => $value) {
+            foreach ($data[$daylist[$i]][$j]['Brunch'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
-                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][0]["date"],$data[$daylist[$i]][0]["dining_hall"],"brunch");
+                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Brunch");
                     array_push($arr,$obj);
                 }
             }
-            foreach ($data[$daylist[$i]][0]['lunch'] as $key => $value) {
+            foreach ($data[$daylist[$i]][$j]['Lunch'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
-                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][0]["date"],$data[$daylist[$i]][0]["dining_hall"],"lunch");
+                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Lunch");
                     array_push($arr,$obj);
                 }
             }
-            foreach ($data[$daylist[$i]][0]['dinner'] as $key => $value) {
+            foreach ($data[$daylist[$i]][$j]['Dinner'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
-                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][0]["date"],$data[$daylist[$i]][0]["dining_hall"],"dinner");
+                    $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Dinner");
                     array_push($arr,$obj);
                 }
+            }
             }
         }
 
-        return view('index', ['data' => $arr]);
+        return view('index', ['data1' => $arr]);
+    }
+
+    public function json_search_by_tags(Request $request) {
+            $json_string = file_get_contents('../content.json');
+            $data = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $json_string), true );
+            $arr=array();
+            if ($request->input('days')==1) {
+                $days = date('Y-m-d');
+            }elseif ($request->input('days')==2) {
+                $days = date('Y-m-d',strtotime('+1 day'));
+            }else{
+                $days = date('Y-m-d',strtotime('+1 day'));
+            }
+            $time = $request->input('time');
+            $halls = $request->input('diningHalls');
+            foreach ($data[$days][$halls][$time] as $key => $value) {
+                $obj = new Meals($value["name"],$value["type"],$data[$days][$halls]["date"],$data[$days][$halls]["dining hall"],$time);
+                array_push($arr,$obj);
+            }
+            return view('index', ['data2' => $arr]);
     }
 
     public function test(){
         $today = date('d')+1;
         echo $today;
     }
-
 }
