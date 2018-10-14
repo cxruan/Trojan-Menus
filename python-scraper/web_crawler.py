@@ -23,7 +23,7 @@ class web_menu(object):
         # instantiation
         self.date = date
         date_ = date.split('-')
-        self.url = urlib.parser.quote("https://hospitality.usc.edu/residential-dining-menus/?menu_date=" + months[date_[1]] + "+" + date_[2].lstrip('0') + "%2C" + "+" + date_[0])
+        self.url = "https://hospitality.usc.edu/residential-dining-menus/?menu_date=" + months[date_[1]] + "+" + date_[2].lstrip('0') + "%2C" + "+" + date_[0]
         print(self.url)
         with request.urlopen(self.url) as menus:
             self.data = menus.read()
@@ -155,12 +155,12 @@ class double_week_web_menu(object):
     jsonOutput_ = {}
     
     def __init__(self):
-        for i in range(3):
+        for i in range(14):
             self.dates.append((datetime.date.today() + datetime.timedelta(i)).isoformat())
             self.webMenus.append(web_menu(self.dates[i]))
     
     def filtered_output_json(self, fileName="../contents.json"):
-        for i in range(3):
+        for i in range(14):
             self.webMenus[i].filtered_output_json_convert()
             self.jsonOutput_[self.dates[i]] = self.webMenus[i].jsonOutput
         with open(fileName, "w") as newFile:
