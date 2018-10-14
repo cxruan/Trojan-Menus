@@ -12,6 +12,8 @@ class web_menu(object):
     meals = []
     diningHalls = []
     bars = []
+    dishes = []
+    tags = []
 
     def __init__(self, date, url="https://hospitality.usc.edu/residential-dining-menus/"):
         # instantiation
@@ -50,7 +52,6 @@ class web_menu(object):
         #                 newFile.write('\t\t' + 'Null' + '\n')
 
         # search for separate dish tags
-        self.dishes = []
         for meal in meals_:
             self.dishes.append([])
             for diningHall in diningHalls_[meals_.index(meal)]:
@@ -58,9 +59,19 @@ class web_menu(object):
                     self.dishes[meals_.index(meal)].append([])
                     for bar in bars_[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)]:
                         self.dishes[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].append(bar.find_all("li"))
+        
+        #search for separate type tags
+        for meal in meals_:
+            self.tags.append([])
+            for diningHall in diningHalls_[meals_.index(meal)]:
+                if diningHall.find(class_="menu-item-list"):
+                    self.tags[meals_.index(meal)].append([])
+                    for bar in bars_[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)]:
+                        self.tags[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].append([])
+                        for dish in self.dishes[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)][bars_[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].index(bar)]:
+                            self.tags[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)][bars_[meals_.index(meal)][diningHalls_[meals_.index(meal)].index(diningHall)].index(bar)].append(dish.find_all("i"))
 
         # search for separate bar tags
-        self.bars = []
         for meal in meals_:
             self.bars.append([])
             for diningHall in diningHalls_[meals_.index(meal)]:
@@ -70,7 +81,6 @@ class web_menu(object):
                     self.bars[meals_.index(meal)].append("Null")
 
         # search for separate diningHall tags
-        self.diningHalls = []
         for meal in meals_:
             self.diningHalls.append(meal.find_all(class_="menu-venue-title"))
 
@@ -101,6 +111,8 @@ class web_menu(object):
                             newFile.write('\t\t' + bar.get_text() + '\n')
                             for dish in self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)]:
                                 newFile.write('\t\t\t' + str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()] + '\n')
+                                for tag in self.tags[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)][self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)].index(dish)]:
+                                    newFile.write('\t\t\t\t' + tag.span.get_text() + '\n')
                     else:
                         newFile.write('\t\t' + self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)] + '\n')
     
@@ -112,9 +124,15 @@ class web_menu(object):
             for meal in self.meals:
                 jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]] = []
                 if (type(self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]) == type(self.meals)):
+                    index = 0
                     for bar in self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]:
                         for dish in self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)]:
                             jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]].append({"name": str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()]})
+                            jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"] = []
+                            for tag in self.tags[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)][self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)].index(dish)]:
+                                jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"].append(tag.span.get_text())
+                            index += 1
+
         with open("content.json", "w") as newFile:
             newFile.write(json.dumps(jsonOutput))
 
