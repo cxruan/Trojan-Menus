@@ -103,6 +103,21 @@ class web_menu(object):
                                 newFile.write('\t\t\t' + str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()] + '\n')
                     else:
                         newFile.write('\t\t' + self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)] + '\n')
+    
+    def filtered_output_json(self, fileName="content.json"):
+        #write the filtered menu in json fotrmat
+        jsonOutput = {self.date : []}
+        for diningHall in self.diningHalls[0]:
+            jsonOutput[self.date].append({"dining hall": diningHall.get_text()})
+            for meal in self.meals:
+                jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]] = []
+                if (type(self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]) == type(self.meals)):
+                    for bar in self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]:
+                        for dish in self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)]:
+                            jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]].append({"name": str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()]})
+        with open("content.json", "w") as newFile:
+            newFile.write(json.dumps(jsonOutput))
+
 
 
 
@@ -110,5 +125,6 @@ class web_menu(object):
 
 menu0 = web_menu("2018-10-14")
 #menu0.print_rawhtml()
-menu0.raw_output_txt("output.txt")
+menu0.raw_output_txt()
 menu0.filtered_output_txt()
+menu0.filtered_output_json()
