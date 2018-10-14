@@ -4,6 +4,8 @@ import re
 import json
 import datetime
 
+months = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "August", "09": "September", "10": "October", "11": "November", "12": "December"}
+
 class web_menu(object):
     # class of web menus
     date = ""
@@ -15,11 +17,14 @@ class web_menu(object):
     bars = []
     dishes = []
     tags = []
+    jsonOutput = []
 
-    def __init__(self, date, url="https://hospitality.usc.edu/residential-dining-menus/"):
+    def __init__(self, date):
         # instantiation
         self.date = date
-        self.url = url
+        date_ = date.split('-')
+        self.url = "https://hospitality.usc.edu/residential-dining-menus/?menu_date=" + months[date_[1]] + "+" + date_[2].lstrip('0') + "%2C" + "+" + date_[0]
+        print(self.url)
         with request.urlopen(self.url) as menus:
             self.data = menus.read()
             print('Status:', menus.status, menus.reason)
@@ -117,34 +122,48 @@ class web_menu(object):
                     else:
                         newFile.write('\t\t' + self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)] + '\n')
     
-    def filtered_output_json(self, fileName="content.json"):
+    def filtered_output_json_convert(self):
         #write the filtered menu in json fotrmat
-        jsonOutput = {self.date : []}
+        self.jsonOutput = []
         for diningHall in self.diningHalls[0]:
-            jsonOutput[self.date].append({"dining hall": diningHall.get_text()})
-            jsonOutput[self.date][self.diningHalls[0].index(diningHall)]["date"] = self.date
+            self.jsonOutput.append({"dining hall": diningHall.get_text()})
+            self.jsonOutput[self.diningHalls[0].index(diningHall)]["date"] = self.date
             for meal in self.meals:
-                jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]] = []
+                self.jsonOutput[self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]] = []
                 if (type(self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]) == type(self.meals)):
                     index = 0
                     for bar in self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]:
                         for dish in self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)]:
-                            jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]].append({"name": str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()]})
-                            jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"] = []
+                            self.jsonOutput[self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]].append({"name": str(dish)[4: re.compile(r"(?<=<li>)[^<]+(?=<span)").search(str(dish)).end()]})
+                            self.jsonOutput[self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"] = []
                             for tag in self.tags[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)][self.dishes[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)][self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)].index(bar)].index(dish)]:
-                                jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"].append(tag.span.get_text())
+                                self.jsonOutput[self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"].append(tag.span.get_text())
                             index += 1
 
-        with open("content.json", "w") as newFile:
-            newFile.write(json.dumps(jsonOutput))
+    def filtered_output_json(self, fileName="content.json"):
+        with open(fileName, "w") as newFile:
+            newFile.write(json.dumps({self.date: self.jsonOutput}))
+
+class double_week_web_menu(object):
+    dates = []
+    webMenus = []
+    jsonOutput_ = {}
+    
+    def __init__(self):
+        for i in range(14):
+            self.dates.append((datetime.date.today() + datetime.timedelta(i)).isoformat())
+            self.webMenus.append(web_menu(self.dates[i]))
+    
+    def filtered_output_json(self, fileName="contents.json"):
+        for i in range(14):
+            self.webMenus[i].filtered_output_json_convert()
+            self.jsonOutput_[self.dates[i]] = self.webMenus[i].jsonOutput
+        with open(fileName, "w") as newFile:
+            newFile.write(json.dumps(self.jsonOutput_))
+        
+            
 
 
 
-
-
-today = datetime.date.today()
-menu0 = web_menu(today.isoformat())
-#menu0.print_rawhtml()
-menu0.raw_output_txt()
-menu0.filtered_output_txt()
-menu0.filtered_output_json()
+menus = double_week_web_menu()
+menus.filtered_output_json()
