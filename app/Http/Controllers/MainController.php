@@ -61,33 +61,31 @@ class MainController extends Controller
         $day1 = date('Y-m-d');
         $day2 = date('Y-m-d',strtotime('+1 day'));
         $day3 = date('Y-m-d',strtotime('+2 day'));
-        $day4 = date('Y-m-d',strtotime('+3 day'));
-        $day5 = date('Y-m-d',strtotime('+4 day'));
-        $daylist = array($day1,$day2,$day3,$day4,$day5);
+        $daylist = array($day1,$day2,$day3);
         // $arrr = array();
-        // Search the entire json for the target food within five days
-        for ($i=0; $i < 5; $i++) { 
-            for ($j=0; $j < 5; $j++) { 
+        // Search the entire json for the target food within three days
+        for ($i=0; $i < 3; $i++) { 
+            for ($j=0; $j < 3; $j++) { 
             foreach ($data[$daylist[$i]][$j]['Breakfast'] as $key => $value) {
-                if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
+                if(strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])) , $target)===0 || strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])), $target)){
                     $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Breakfast");
                     array_push($arr,$obj);
                 }
             }
             foreach ($data[$daylist[$i]][$j]['Brunch'] as $key => $value) {
-                if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
+                if(strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])) , $target)===0 || strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])), $target)){
                     $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Brunch");
                     array_push($arr,$obj);
                 }
             }
             foreach ($data[$daylist[$i]][$j]['Lunch'] as $key => $value) {
-                if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
+                if(strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])) , $target)===0 || strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])), $target)){
                     $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Lunch");
                     array_push($arr,$obj);
                 }
             }
             foreach ($data[$daylist[$i]][$j]['Dinner'] as $key => $value) {
-                if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
+                if(strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])) , $target)===0 || strpos(strtolower(preg_replace('/\(.*?\)/', '', $value["name"])), $target)){
                     $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Dinner");
                     array_push($arr,$obj);
                 }
@@ -107,7 +105,7 @@ class MainController extends Controller
             }elseif ($request->input('days')==2) {
                 $days = date('Y-m-d',strtotime('+1 day'));
             }else{
-                $days = date('Y-m-d',strtotime('+1 day'));
+                $days = date('Y-m-d',strtotime('+2 day'));
             }
             $time = $request->input('time');
             $halls = $request->input('diningHalls');
