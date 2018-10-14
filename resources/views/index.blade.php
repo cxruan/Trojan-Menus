@@ -6,10 +6,10 @@
         
         <main>
         <input id="tab1" type="radio" name="tabs" <?php if (!isset($data2)) echo "checked";?>>
-        <label for="tab1">CIE</label>
+        <label for="tab1">Search by Name</label>
           
         <input id="tab2" type="radio" name="tabs"<?php if (isset($data2)) echo "checked";?> >
-        <label for="tab2">AP</label>
+        <label for="tab2">Search by Tags</label>
           
         <section id="content1">
                 <div class="row">
@@ -121,7 +121,7 @@
                             $location = "<span class='col-md-3'>".$value->location."</span>";
                             $types = parse_types($value->types);
                             $name = "<span class='col-md-3'>".$value->name.$types."</span>";
-                            echo "<li>".$name.$date.$time.$location."</li>";
+                            echo "<li>".preg_replace('/\(.*?\)/', '', $name).$date.$time.$location."</li>";
                           }
 
                 echo
@@ -136,7 +136,7 @@
    
     
         <section id="content2">
-                <div class="row">
+                <div class="row" style="padding: 15px">
                   <div class="col-md-2"></div>
                   <div class="col-md-8">
                     <form class="form-horizontal" method="POST" action="{{ route('search_by_tags') }}">
@@ -162,7 +162,7 @@
                                   <option label="Day after Tomorrow">3</option>
                                 </select> 
 
-                                <button type="submit" class="btn btn-default" style="width: 10%">
+                                <button type="submit" class="btn btn-default" style="width: 6%">
                                     Go
                                 </button>
                             </div>              
