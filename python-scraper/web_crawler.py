@@ -121,6 +121,7 @@ class web_menu(object):
         jsonOutput = {self.date : []}
         for diningHall in self.diningHalls[0]:
             jsonOutput[self.date].append({"dining hall": diningHall.get_text()})
+            jsonOutput[self.date][self.diningHalls[0].index(diningHall)]["date"] = self.date
             for meal in self.meals:
                 jsonOutput[self.date][self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]] = []
                 if (type(self.bars[self.meals.index(meal)][self.diningHalls[self.meals.index(meal)].index(diningHall)]) == type(self.meals)):
