@@ -140,7 +140,7 @@ class web_menu(object):
                                 self.jsonOutput[self.diningHalls[self.meals.index(meal)].index(diningHall)][meal.get_text().split()[0]][index]["type"].append(tag.span.get_text())
                             index += 1
 
-    def filtered_output_json(self, fileName="content.json"):
+    def filtered_output_json(self, fileName="../content.json"):
         with open(fileName, "w") as newFile:
             newFile.write(json.dumps({self.date: self.jsonOutput}))
 
@@ -154,7 +154,7 @@ class double_week_web_menu(object):
             self.dates.append((datetime.date.today() + datetime.timedelta(i)).isoformat())
             self.webMenus.append(web_menu(self.dates[i]))
     
-    def filtered_output_json(self, fileName="contents.json"):
+    def filtered_output_json(self, fileName="../contents.json"):
         for i in range(14):
             self.webMenus[i].filtered_output_json_convert()
             self.jsonOutput_[self.dates[i]] = self.webMenus[i].jsonOutput

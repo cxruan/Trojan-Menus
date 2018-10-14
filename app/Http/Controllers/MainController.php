@@ -55,17 +55,19 @@ class MainController extends Controller
     public function json_search_by_name(Request $request)
     {   
         $target = strtolower($request->input('search'));
-        $json_string = file_get_contents('../content.json');
+        $json_string = file_get_contents('../contents.json');
         $data = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $json_string), true );
         $arr=array();
         $day1 = date('Y-m-d');
         $day2 = date('Y-m-d',strtotime('+1 day'));
         $day3 = date('Y-m-d',strtotime('+2 day'));
-        $daylist = array($day1,$day2,$day3);
+        $day4 = date('Y-m-d',strtotime('+3 day'));
+        $day5 = date('Y-m-d',strtotime('+4 day'));
+        $daylist = array($day1,$day2,$day3,$day4,$day5);
         // $arrr = array();
-        // Search the entire json for the target food within three days
-        for ($i=0; $i < 3; $i++) { 
-            for ($j=0; $j < 3; $j++) { 
+        // Search the entire json for the target food within five days
+        for ($i=0; $i < 5; $i++) { 
+            for ($j=0; $j < 5; $j++) { 
             foreach ($data[$daylist[$i]][$j]['Breakfast'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
                     $obj = new Meals($value["name"],$value["type"],$data[$daylist[$i]][$j]["date"],$data[$daylist[$i]][$j]["dining hall"],"Breakfast");
@@ -97,7 +99,7 @@ class MainController extends Controller
     }
 
     public function json_search_by_tags(Request $request) {
-            $json_string = file_get_contents('../content.json');
+            $json_string = file_get_contents('../contents.json');
             $data = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $json_string), true );
             $arr=array();
             if ($request->input('days')==1) {
@@ -114,10 +116,5 @@ class MainController extends Controller
                 array_push($arr,$obj);
             }
             return view('index', ['data2' => $arr]);
-    }
-
-    public function test(){
-        $today = date('d')+1;
-        echo $today;
     }
 }
