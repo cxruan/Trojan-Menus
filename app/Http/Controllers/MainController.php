@@ -63,6 +63,7 @@ class MainController extends Controller
         $day3 = date('Y-m-d',strtotime('+2 day'));
         $daylist = array($day1,$day2,$day3);
 
+        // Search the entire json for the target food within three days
         for ($i=0; $i < 3; $i++) { 
             foreach ($data[$daylist[$i]][0]['breakfast'] as $key => $value) {
                 if(strpos(strtolower($value["name"]) , $target)===0 || strpos(strtolower($value["name"]), $target)){
