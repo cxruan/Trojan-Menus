@@ -26,18 +26,35 @@
                   <div class="col-md-2"></div>
                 </div>
                 <?php
+                function wk($date1) {
+                $datearr = explode("-",$date1);    
+                $year = $datearr[0];
+                $month = sprintf('%02d',$datearr[1]);  
+                $day = sprintf('%02d',$datearr[2]);
+                $hour = $minute = $second = 0;
+                $dayofweek = mktime($hour,$minute,$second,$month,$day,$year);
+                $shuchu = date("w",$dayofweek);
+                $weekarray=array("Sun","Mon","Tue","Wed","Thu","Fri","Sat"); 
+                return $weekarray[$shuchu];
+              }
+
                 if (isset($data)) {
                 echo
                 "<ul id='accordion' class='accordion'>
                 <li class='default open'>
                     <div class='link'><i class='fa fa-search'></i>Search results</div>
                     <ul class='submenu'>";
+
                           foreach ($data as $key => $value) {
-                            echo " <li><span>".$value->name."</span></li>";
+                            $name = "<span class='col-md-3'>".$value->name."</span>";
+                            $date = "<span class='col-md-3'>".$value->date." ".wk($value->date)."</span>";
+                            $time = "<span class='col-md-3'>".$value->time."</span>";
+                            $location = "<span class='col-md-3'>".$value->location."</span>";
+                            echo "<li>".$name.$date.$time.$location."</li>";
                           }
 
                 echo
-                        "<li><span>AP Physics C: Mechanics</span></li>
+                        "
                     </ul>
                 </li>
             </ul>";

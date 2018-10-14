@@ -1,5 +1,3 @@
-@import url(https://fonts.geekzu.org/css?family=Raleway:300,400,600);
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -72,7 +70,7 @@ opacity:0;
 
 #wrapper{
 	height: 100vh;
-	background-image: url("https://mfpapers-hk.oss-cn-hongkong.aliyuncs.com/close-up-cooking-cuisine-958545.jpg");
+	background-image: url("https://s3-us-west-1.amazonaws.com/storage-cxruan/close-up-cooking-cuisine-958545.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -102,4 +100,211 @@ opacity:0;
     border-top: 1px solid rgb(100,100,100);
     color: rgb(200,200,200);
     padding: 10px 0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    list-style-type: none !important;
+}
+
+body{
+    background-color: black;
+}
+
+#search-results{
+	background-color: #484152;
+}
+
+main {
+  width:100%;
+  padding: 0;
+  margin: 0 auto;
+  background: white;
+}
+
+section {
+  display: none;
+  padding: 2px 0 0;
+  border-top: 1px solid #ddd;
+
+}
+
+input {
+  display: none;
+}
+
+label {
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #4D4D4D;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f1cb'; }
+label[for*='2']:before { content: '\f2d9'; }
+label[for*='3']:before { content: '\f16b'; }
+
+label:hover {
+
+  cursor: pointer;
+}
+
+input:checked + label {
+  font-size: 16px;
+  color: #b63b4d ;
+  border: 1px solid #ddd;
+  border-top: 2px solid #b63b4d;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+.accordion a {
+	color: #b63b4d;
+	text-decoration: none;
+}
+
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+
+.accordion ul {
+	list-style-type: none !important;
+}
+
+.accordion h1 a {
+ 	color: #c12c42;
+ 	font-size: 16px;
+ }
+
+ .accordion {
+ 	width: 100%;
+ 	margin: 0px auto 0px;
+ 	background: white;
+ 	-webkit-border-radius: 18px;
+ 	-moz-border-radius: 18px;
+ 	border-radius: 18px;
+ }
+
+.accordion .link {
+	cursor: pointer;
+	display: block;
+	padding: 15px 15px 15px 42px;
+	color: #4D4D4D;
+	font-size: 14px;
+	font-weight: 700;
+	border-bottom: 1px solid #CCC;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+	border-bottom: 0;
+}
+
+.accordion li i {
+	position: absolute;
+	top: 16px;
+	left: 12px;
+	font-size: 18px;
+	color: #595959;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+	right: 12px;
+	left: auto;
+	font-size: 16px;
+}
+
+.accordion li.open .link {
+	color: #b63b4d;
+}
+
+.accordion li.open i {
+	color: #b63b4d;
+}
+.accordion li.open i.fa-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.accordion li.default .submenu {display: block;}
+/**
+ * Submenu
+ -----------------------------*/
+ .submenu {
+ 	display: none;
+ 	background: rgb(40,40,40);
+ 	font-size: 13px;
+     
+ }
+
+ .submenu span {
+ 	border-bottom: 1px solid #4b4a5e;
+ 	background: #484152;
+ }
+
+ .submenu span {
+ 	display: block;
+ 	text-decoration: none;
+ 	color: white;
+ 	padding: 12px;
+ 	padding-left: 42px;
+ 	-webkit-transition: all 0.25s ease;
+ 	-o-transition: all 0.25s ease;
+ 	transition: all 0.25s ease;
+ }
+
+/* .submenu span:hover {
+ 	background: #b63b4d;
+ 	color: #FFF;
+ }*/
+
+#subtitle{
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 4vw;
+	font-weight: 200;
+	padding: 20px 0;
+	border-bottom: 1px solid rgb(150,150,150);
+	user-select: none;
+}
+
+#title{
+	text-align: center;
+	font-size: 2.5vw;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+	#subtitle{display: none;}
+	#title{font-size: 6.5vw;}
 }

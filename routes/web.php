@@ -16,3 +16,5 @@ Route::get('/','MainController@index');
 //Route::get('/json-test','MainController@json_test');
 
 Route::post('search','MainController@json_test')->name("search");
+
+Route::get('/test','MainController@test');
