@@ -21,27 +21,6 @@
 
 <body style="background-color: rgb(36,36,36);">
     <div id="wrapper">
-        <nav class="navbar navbar-default navbar-static-top navbar-shadow">
-            <div class="container">
-                <div class="navbar-container">
-                <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-
-                    <a href="" class="navbar-toggle navbar-font" style="float:left;line-height: 16px; border: 1px solid white; border-radius: 10px; margin: 30px 0px 0px 0px;"><i class="fa fa-home fa-2x"></i></a>
-
-                    <a href="" class="navbar-toggle navbar-font" style="line-height: 16px; border: 1px solid white; border-radius: 10px; margin: 30px 0px 0px 0px;"><i class="fa fa-user-o fa-2x"></i></a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <ul class="nav navbar-nav navbar">
-                        <!-- Authentication Links -->
-                            <li><a href="/" class="navbar-font" style="line-height: 13px; border: 1px solid white; border-radius: 10px; margin: 3px 0px 0px 0px;">Home</a></li>
-                    </ul>
-
-                </div>
-            </div>
-            </div>
-        </nav> 
 
         <style>
           @media only screen and (max-width: 600px) {
@@ -73,14 +52,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Auto scroll down -->
-    <script>
-    
-        var dis = $(window).height();
-    
-        $("html, body").animate({ scrollTop: dis }, 600);
-    </script>
 
 </body>
 </html>

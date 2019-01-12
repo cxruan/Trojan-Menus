@@ -1,2 +1,2 @@
-#!/bin/bash
-python3 ./web_crawler.py
+#!/bin/zsh
+python3.4 ./web_crawler.py

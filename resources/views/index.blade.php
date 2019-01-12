@@ -4,7 +4,7 @@
 
     <div id="content">
         
-        <main>
+        <main style="padding: 10px;">
         <input id="tab1" type="radio" name="tabs" <?php if (!isset($data2)) echo "checked";?>>
         <label for="tab1">Search by Name</label>
           
@@ -14,31 +14,35 @@
         <section id="content1">
                 <div class="row">
                   <div class="col-md-2"></div>
-                  <div class="col-md-8">
-                    <form action="{{ route('search_by_name') }}" method="post" class="navbar-form navbar-left" role="search" style="width: 100%">
+                  <div class="col-md-8">                  
+                    <form action="{{ route('search_by_name') }}" method="post" class="navbar-form" role="search" style="width: 100%">
                       {{ csrf_field() }}
-                    <div class="form-group" style="width: 70%">
-                      <input name="search" type="text" class="form-control" placeholder="Search" style="width: 100%">
-                    </div>
-                    <button type="submit" class="btn btn-default">Go</button>
+
+                      <div style="text-align:center;">
+                        <div class="form-group" >
+                          <input name="search" type="text" class="form-control" placeholder="Search" style="width: 300px;">
+                        </div>
+                      </div>
+                      <br>
+                      <div style="text-align:center;">
+                        <button type="submit" class="btn btn-default" style="width: 20%">Go</button>
+                      </div>
                     </form>
                   </div>
                   <div class="col-md-2"></div>
                 </div>
+                <br>
+                <div class="row" style="text-align: center;font-size: 14px;">ALLERGEN LEGEND:</div>
                 <div class="row">
-                  <div class="col-md-2" style="text-align: right;font-size: 14px;">ALLERGEN LEGEND:</div>
-                  <div class="col-md-10">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-dairy'></i>Dairy</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-eggs'></i>Eggs</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-fish'></i>Fish</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-food-not-analyzed-for-allergens'></i>Food Not Analyzed for Allergens</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-peanuts'></i>Peanuts</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-pork'></i>Pork</span>
-                  </div>
-                </div>
-                <div class="row" style="padding-bottom:25px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-10">
+    
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-sesame'></i>Sesame</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-shellfish'></i>Shellfish</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-soy'></i>Soy</span>
@@ -46,8 +50,10 @@
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-vegan'></i>Vegan</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-vegetarian'></i>Vegetarian</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-gluten'></i>Wheat / Gluten</span>
+                    <div class="col-md-2"></div>
                   </div>
                 </div>
+
                 <?php
                 // Convert date into days of week
                 function wk($date1) {
@@ -130,7 +136,8 @@
                 </li>
             </ul>";
                 }
-            ?>
+            ?>                
+
 
         </section>
    
@@ -142,27 +149,27 @@
                     <form class="form-horizontal" method="POST" action="{{ route('search_by_tags') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <div class="row">
-                                <select class="form-control" name="diningHalls" style="width: 35%">
+                            <div style="text-align: center;">
+                                <select class="form-control" name="diningHalls" style="width: 200px">
                                   <option label="USC VILLAGE DINING HALL">0</option>                            
                                   <option label="PARKSIDE RESTAURANT & GRILL">1</option>
                                   <option label="EVERYBODY'S KITCHEN">2</option>
                                 </select>  
 
-                                <select class="form-control" name="time" style="width: 15%">                            
+                                <select class="form-control" name="time" style="width: 100px">                            
                                   <option label="Breakfast">Breakfast</option>
                                   <option label="Brunch">Brunch</option>
                                   <option label="Lunch">Lunch</option>
                                   <option label="Dinner">Dinner</option>
                                 </select>                                                
 
-                                <select class="form-control" name="days" style="width: 15%">                            
+                                <select class="form-control" name="days" style="width: 100px">                            
                                   <option label="Today">1</option>
                                   <option label="Tomorrow">2</option>
                                   <option label="Day after Tomorrow">3</option>
                                 </select> 
 
-                                <button type="submit" class="btn btn-default" style="width: 6%">
+                                <button type="submit" class="btn btn-default" style="width: 50px">
                                     Go
                                 </button>
                             </div>              
@@ -171,20 +178,18 @@
                   </div>
                   <div class="col-md-2"></div>
                 </div>
+                <br>
+                <div class="row" style="text-align: center;font-size: 14px;">ALLERGEN LEGEND:</div>
                 <div class="row">
-                  <div class="col-md-2" style="text-align: right;font-size: 14px;">ALLERGEN LEGEND:</div>
-                  <div class="col-md-10">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-dairy'></i>Dairy</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-eggs'></i>Eggs</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-fish'></i>Fish</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-food-not-analyzed-for-allergens'></i>Food Not Analyzed for Allergens</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-peanuts'></i>Peanuts</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-pork'></i>Pork</span>
-                  </div>
-                </div>
-                <div class="row" style="padding-bottom:25px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-10">
+    
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-sesame'></i>Sesame</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-shellfish'></i>Shellfish</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-soy'></i>Soy</span>
@@ -192,8 +197,10 @@
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-vegan'></i>Vegan</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-vegetarian'></i>Vegetarian</span>
                       <span class="allergen-container"><i class='fa fa-circle fa-allergen allergen-gluten'></i>Wheat / Gluten</span>
+                    <div class="col-md-2"></div>
                   </div>
                 </div>
+                
                 <?php
                 if (isset($data2)) {
                 echo
@@ -222,5 +229,7 @@
         </section>
 
         </main>
+
+
 
 @endsection
