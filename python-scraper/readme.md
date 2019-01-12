@@ -1,2 +1,2 @@
-## Scrape USC Dining Menus
-Use crontab to execute web_crawler.py periodically
+## USC Dining Menus Scraper
+Periodically scrape USC Dining Menus using crontab
