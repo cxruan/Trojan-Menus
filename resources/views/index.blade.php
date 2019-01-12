@@ -119,14 +119,14 @@
                 "<ul id='accordion' class='accordion'>
                 <li class='default open'>
                     <div class='link'><i class='fa fa-search'></i>Search results</div>
-                    <ul class='submenu'>";
+                    <ul class='submenu' >";
 
                           foreach ($data1 as $key => $value) {
                             $date = "<span class='col-md-2'>".$value->date." ".wk($value->date)."</span>";
                             $time = "<span class='col-md-2'>".$value->time."</span>";
                             $location = "<span class='col-md-3'>".$value->location."</span>";
                             $types = parse_types($value->types);
-                            $name = "<span class='col-md-5'>".$value->name.$types."</span>";
+                            $name = "<span class='col-md-5'  style='overflow: hidden;text-overflow: ellipsis; -o-text-overflow: ellipsis;white-space:nowrap;' >".$value->name.$types."</span>";
                             echo "<li>".preg_replace('/\(.*?\)/', '', $name).$date.$time.$location."</li>";
                           }
 
@@ -214,7 +214,7 @@
                             $time = "<span class='col-md-2'>".$value->time."</span>";
                             $location = "<span class='col-md-3'>".$value->location."</span>";
                             $types = parse_types($value->types);
-                            $name = "<span class='col-md-5'>".$value->name.$types."</span>";
+                            $name = "<span class='col-md-5' style='overflow: hidden;text-overflow: ellipsis; -o-text-overflow: ellipsis;white-space:nowrap;'>".$value->name.$types."</span>";
                             echo "<li>".preg_replace('/\(.*?\)/', '', $name).$date.$time.$location."</li>";
                           }
 
