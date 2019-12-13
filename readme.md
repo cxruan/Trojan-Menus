@@ -1,3 +1,3 @@
 ## Trojan Menus
 
-A fast, convenient web app helping look up USC Residential Dining Menus
+An intuitive and fast web app to look up USC dining halls' menu.
